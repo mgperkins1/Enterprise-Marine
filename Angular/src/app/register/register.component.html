@@ -1,0 +1,106 @@
+<div class="container" *ngIf="!accountCreated">
+    <div class="container-sm drop">
+        <form (ngSubmit)="onSubmit(register)" #register="ngForm" class="form-horizontal">
+            <div class="form-group form-row justify-content-center">
+                <div class="col-10 col-md-2">
+                    <label for="email" class="control-label font-weight-bold text-secondary">Email</label>
+                </div>
+                <div class="col-10 col-md-5">
+                    <input type="text" class="form-control" name="email" required #email="ngModel"
+                        [(ngModel)]="register.email">
+                    <div class="error" *ngIf="!email.valid && email.touched">Required</div>
+                </div>
+            </div>
+            <div class="form-group form-row justify-content-center">
+                <div class="col-10 col-md-2">
+                    <label for="name" class="control-label font-weight-bold text-secondary">User Name</label>
+                </div>
+                <div class="col-10 col-md-5">
+                    <input type="text" class="form-control" name="name" required #name="ngModel"
+                        [(ngModel)]="register.username">
+                    <div class="error" *ngIf="!name.valid && name.touched">Required</div>
+                </div>
+            </div>
+            <div class="form-group form-row justify-content-center">
+                <div class="col-10 col-md-2">
+                    <label for="password" class="control-label font-weight-bold text-secondary">Password</label>
+                </div>
+                <div class="col-10 col-md-5">
+                    <input type="password" class="form-control" name="password" required #pword="ngModel"
+                        [(ngModel)]="register.password">
+                    <div class="error" *ngIf="!pword.valid && pword.touched">Required</div>
+                    <div class="error" *ngIf="pword.dirty && pword.value.length < 8">Password must be at least 8
+                        characters long</div>
+                </div>
+            </div>
+            <div class="form-group form-row justify-content-center">
+                <div class="col-10 col-md-2">
+                    <label for="confirm" class="control-label font-weight-bold text-secondary">Confirm Password</label>
+                </div>
+                <div class="col-10 col-md-5">
+                    <input type="password" class="form-control" name="confirm" required #confirm="ngModel"
+                        [(ngModel)]="register.confirm">
+                    <div class="error" *ngIf="!confirm.valid && confirm.touched">Required</div>
+                    <div class="error" *ngIf="confirm.dirty && confirm.value !== pword.value">Passwords do not match
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="form-group form-row justify-content-center">
+                <button [disabled]="!register.valid" type="submit" class="btn btn-secondary">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" *ngIf="accountCreated">
+    <div class="container-sm drop text-center">
+        <h4 class="text-secondary text-center">Welcome {{name}}!</h4>
+        <br>
+        <br>
+        <h5 class="text-secondary text-center">Your account was created successfully.</h5>
+        <br>
+        <br>
+        <button class="btn btn-secondary" (click)="onClick()">Login</button>
+    </div>
+</div>
+
+<!-- <div class="container-sm drop">
+    <div class="card bg-transparent">
+        <div class="card-header text-white">
+            <h5>{{title}}</h5>
+        </div>
+        <div class="card-body">{{bodyText}}</div>
+        <br>
+        <form (ngSubmit)="onSubmit(login)" #login="ngForm" class="form-horizontal">
+            <div class="form-group form-row justify-content-center">
+                <div class="col-10 col-md-3">
+                    <label for="name" class="control-label font-weight-bold text-white">User Name</label>
+                </div>
+                <div class="col-10 col-md-5">
+                    <input type="text" class="form-control" name="name" required #name="ngModel"
+                        [(ngModel)]="login.username">
+                    <div *ngIf="!name.valid && name.touched" class="error">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group form-row justify-content-center">
+                <div class="col-10 col-md-3">
+                    <label for="password" class="control-label font-weight-bold text-white">Password</label>
+                </div>
+                <div class="col-10 col-md-5">
+                    <input type="password" class="form-control" name="password" required #pword="ngModel"
+                        [(ngModel)]="login.password">
+                    <div *ngIf="!pword.valid && pword.touched" class="error">Password is required</div>
+                </div>
+            </div>
+            <div *ngIf="submitted && !isAuthenticated" class="error text-center">Invalid Credentials!</div>
+            <br />
+
+            <div class="form-group form-row justify-content-center">
+                <div class="col-2">
+                    <button [disabled]="!login.valid" type="submit" class="btn btn-light">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
