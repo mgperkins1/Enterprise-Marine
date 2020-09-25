@@ -1,0 +1,34 @@
+.text-color {
+    color: #a3dee7;
+}
+
+.active-link {
+    color: #000000;
+}
+
+.right {
+    position: absolute;
+    right: 25px;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.1rem rgba(46, 48, 49, 0.25);
+}
+
+/* #navbarSupportedContent {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #a3dee7;
+} */
+
+/* #login {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #a3dee7;
+} */
+
+/* #border {
+    border-color: #a3dee7;
+    background-color: #a3dee7;
+    height: 5px;
+} */
