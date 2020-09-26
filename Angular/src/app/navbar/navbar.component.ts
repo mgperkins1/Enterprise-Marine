@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(private currentUserService: CurrentUserService, private sharedService: SharedService) { }
 
   ngOnInit() {
-    this.sharedService.currentData.subscribe(data => {
+    this.sharedService.currentData.subscribe((data: string) => {
       this.username = data;
     });
   }

@@ -6,18 +6,18 @@
                     <label for="email" class="control-label font-weight-bold text-secondary">Email</label>
                 </div>
                 <div class="col-10 col-md-5">
-                    <input type="text" class="form-control" name="email" required #email="ngModel"
-                        [(ngModel)]="register.email">
+                    <input type="email" class="form-control" name="email" required #email="ngModel"
+                        [(ngModel)]="register.email" autocomplete="email">
                     <div class="error" *ngIf="!email.valid && email.touched">Required</div>
                 </div>
             </div>
             <div class="form-group form-row justify-content-center">
                 <div class="col-10 col-md-2">
-                    <label for="name" class="control-label font-weight-bold text-secondary">User Name</label>
+                    <label for="name" class="control-label font-weight-bold text-secondary">Username</label>
                 </div>
                 <div class="col-10 col-md-5">
                     <input type="text" class="form-control" name="name" required #name="ngModel"
-                        [(ngModel)]="register.username">
+                        [(ngModel)]="register.username" autocomplete="username">
                     <div class="error" *ngIf="!name.valid && name.touched">Required</div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-10 col-md-5">
                     <input type="password" class="form-control" name="password" required #pword="ngModel"
-                        [(ngModel)]="register.password">
+                        [(ngModel)]="register.password" autocomplete="new-password">
                     <div class="error" *ngIf="!pword.valid && pword.touched">Required</div>
                     <div class="error" *ngIf="pword.dirty && pword.value.length < 8">Password must be at least 8
                         characters long</div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-10 col-md-5">
                     <input type="password" class="form-control" name="confirm" required #confirm="ngModel"
-                        [(ngModel)]="register.confirm">
+                        [(ngModel)]="register.confirm" autocomplete="new-password">
                     <div class="error" *ngIf="!confirm.valid && confirm.touched">Required</div>
                     <div class="error" *ngIf="confirm.dirty && confirm.value !== pword.value">Passwords do not match
                     </div>
