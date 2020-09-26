@@ -49,7 +49,7 @@
                     </a>
                 </li>
             </div>
-            <div class="dropdown right" *ngIf="username">
+            <div class="dropdown right" *ngIf="username!=null">
                 <button class="btn btn-transparent dropdown-toggle text-secondary" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{username | titlecase}}
