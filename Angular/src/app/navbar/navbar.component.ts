@@ -1,4 +1,3 @@
-import { CurrentUserService } from './../current-user.service';
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
 
@@ -10,7 +9,7 @@ import { SharedService } from '../shared.service';
 export class NavbarComponent implements OnInit {
   username: string;
 
-  constructor(private currentUserService: CurrentUserService, private sharedService: SharedService) { }
+  constructor(private sharedService: SharedService) { }
 
   ngOnInit() {
     this.sharedService.currentData.subscribe((data: string) => {
